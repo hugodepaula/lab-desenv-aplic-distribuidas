@@ -1,0 +1,93 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Cronograma de aula
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[11pt,brazil, a4paper, fullpage]{article}
+
+
+\newcommand\UNIVERSIDADE{PONTIFÍCIA  UNIVERSIDADE  CATÓLICA  DE  MINAS  GERAIS}
+\newcommand\UNIDADE{Praça da Liberdade}
+\newcommand\INSTITUTO{Inst. de Ciências Exatas e Informática}
+\newcommand\CURSO{Eng. de Software}
+\newcommand\PROFESSOR{Hugo de Paula}
+\newcommand\EMAILPROFESSOR{hugo@pucminas.br}
+\newcommand\DEPARTAMENTO{Departamento de Ciência da Computação}
+
+\newcommand\DISCIPLINA{Lab. de Desenv. de Aplicações Móveis e Distribuídas}
+\newcommand\ANO{2024}
+\newcommand\SEMESTRE{1}
+\newcommand\TURNO{noite}
+\newcommand\PERIODO{5}
+
+\def\year{\ANO}
+
+\input{infos/some-definitions}
+\input{infos/calpreambulo}
+
+\newcommand{\DIAUM}{\Quarta}
+\newcommand{\DIADOIS}{\Quarta}
+
+
+\begin{document}
+
+	\selectlanguage{brazil}
+
+	\logoPUC{infos/puclogo_small_bw}
+	\dadosDisciplina{\DISCIPLINA}{\CURSO}{\TURNO}{\ANO}{\SEMESTRE}{\PROFESSOR}{\EMAILPROFESSOR}
+
+	%\dadosAvancadosDisciplina{04}{00}{04}{80}{04}{infos/objetivos.tex}{infos/ementa.tex}{3 $\times$ 25}{25}{infos/avaliacao.tex}{infos/biblio.tex}
+
+	\calVisualColorido{1}{\DIAUM}{\DIADOIS}{\ANO}{07-07} % semestre, dias de aula (DOIS vezes por semana)
+	%\calVisualColorido{2}{\DIAUM}{\DIADOIS}{\ANO}{12-21} % semestre, dias de aula (DOIS vezes por semana)
+
+
+\begin{center}
+
+\small
+%\footnotesize
+\begin{calendar}{2/5/\ANO}{22} % Semestre comeca no dia 1 de agosto, e dura por 21 semanas.
+\setlength{\calboxdepth}{.3in}
+\setlength{\calwidth}{0.95\textwidth}
+
+%
+%% configuracao da semana
+\semanaQua
+%
+%% lista de Aulas
+\caltexton{1}{Apresentação da disciplina e Nivelamento de Redes}
+\caltextnext{Programação Socket e Multicast em Java}
+\caltextnext{Programação Java RMI}
+\caltextnext{Programação Java RMI}
+\caltextnext{Comunicação indireta}
+\caltextnext{Comunicação indireta}
+\caltextnext{Comunicação indireta}
+\caltextnext{Desenvolvimento web MVC}
+\caltextnext{Desenvolvimento web MVC}
+\caltextnext{Desenvolvimento web MVC}
+\caltextnext{Desenvolvimento móvel com Flutter}
+\caltextnext{Desenvolvimento móvel com Flutter}
+\caltextnext{Desenvolvimento móvel com Flutter}
+\caltextnext{Desenvolvimento móvel com Flutter}
+\caltextnext{Desenvolvimento móvel com Flutter}
+\caltextnext{Serverless computing}
+\caltextnext{Serverless computing}
+\caltextnext{Serverless computing}
+%\caltextnext{Acompanhamento}
+\caltextnext{Apresentação}
+%\caltextnext{Reavaliação}
+%
+% feriados e avisos
+% Se n?o quiser que os avisos sejam colocados no cronograma, basta comentar o comando input.
+\input{infos/feriados}
+%%\input{infos/avisos}
+%
+
+%\aviso{9/19/2022}{AULA ADICIONAL SEGUNDA-FEIRA, DIA 19/09, 10h40}
+%\aviso{10/12/2022}{AULA ADICIONAL QUINTA-FEIRA, DIA 13/10, 8h50}
+%\aviso{10/31/2022}{AULA ADICIONAL SEGUNDA-FEIRA, DIA 19/09, 10h40}
+
+
+\end{calendar}
+\end{center}
+
+\end{document}
