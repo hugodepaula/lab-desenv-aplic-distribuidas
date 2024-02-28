@@ -1,0 +1,97 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Trabalho Java RMI de Desenvolvimento de Aplicações Móveis e Distribuídas
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt,brazil, a4paper, fullpage]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Preambulo - Configuração de página
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{discpreambulo}
+\usepackage{booktabs}
+\usepackage{wrapfig}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Inicio do documento
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+    \selectlanguage{brazil}
+    \lstset{language=Java,
+        basicstyle=\small, % print whole listing small
+        showstringspaces=false}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Logo da PUC Minas
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\thispagestyle{plain}
+\logoPUC{Curso de Bacharelado em Engenharia de Software}{puc_engesoft_logo.png}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Caracteristicas da disciplina
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\dadosDisciplina{Lab. Desenv. Aplic. Móveis e Distribuás}{Engenharia de Software}{Noite}{5}{Hugo de Paula (hugo@pucminas.br)}
+
+\tituloPUC{Trabalho Dicionário Distribuído \\ em dupla}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Corpo
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Objetivos do trabalho}
+
+O objetivo deste trabalho é o de praticar a comunicação entre processos utilizando a tecnologia Java RMI (\textit{Remote Method Invocation}).
+
+\section{Especificação}
+
+\indent \indent Utilizando uma arquitetura cliente-servidor, projete e implemente um servidor que permita que clientes busquem concorrentemente o significado, adicionar uma palavra ou remover uma palavra de um dicionário distribuído.
+
+Do ponto de vista da estrutura de dados, um dicionário é uma coleção de pares chave-valor, onde cada chave única mapeia para um valor correspondente. A chave em um dicionário é geralmente usada como um identificador exclusivo para acessar o valor associado a ela. Esta estrutura permite uma busca eficiente de elementos com base em sua chave, tornando-a ideal para muitas situações onde é necessário armazenar e recuperar informações associadas a identificadores únicos.
+
+O trabalho foi projetado para demonstrar o funcionamento da invocação de métodos remotos baseada no Java RMI. Você deverá garantir que o sistema funcione com múltiplos clientes acessando o sistema concorrentemente. Segundo a especificação do Java RMI\footnote{\url{https://docs.oracle.com/javase/8/docs/technotes/tools/windows/s4-rmi-tools.html}}:
+
+\begin{quotation}
+\textit{``A method dispatched by the RMI runtime to a remote object implementation may or may not execute in a separate thread. The RMI runtime makes no guarantees with respect to mapping remote object invocations to threads. Since remote method invocation on the same remote object may execute concurrently, a remote object implementation needs to make sure its implementation is thread-safe.''
+}
+\end{quotation}
+
+Requisitos arquiteturais:
+
+\begin{enumerate}
+\item A arquitetura deverá ser cliente-servidor, com um único servidor servindo múltiplos clientes.
+\item A interação deverá ser feita por Java RMI.
+\item Os dados devem ser persistidos de alguma forma: XML, JSON, \textit{Java Object Serialization}, etc.
+\item Espera-se que sejam tratados os erros adequadamente: entrada/saída, rede, etc.
+\end{enumerate}
+
+
+Requisitos funcionais:
+
+\begin{enumerate}
+\item Consultar o significado de uma palavra. \\
+\textbf{Entrada}: \textit{palavra}. \textbf{Saída}: \textit{significado}. \textbf{Erro}: \textit{Palavra não encontrada e padrões do Java}.
+
+\item Adicionar nova palavra. \\
+\textbf{Entrada}: \textit{palavra, significado}. \textbf{Saída}: \textit{sucesso ou duplicado}. \textbf{Erro}: \textit{padrões do Java}.
+
+\item Remover palavra. \\
+\textbf{Entrada}: \textit{palavra}. \textbf{Saída}: \textit{sucesso ou não encontrado}. \textbf{Erro}: \textit{padrões do Java}.
+
+\item Desenvolver interface gráfica simples para o cliente.
+
+\item Endereço do servidor deve ser configurável no cliente (pode usar argumento de linha de comando).
+\end{enumerate}
+
+\section{Resultados Esperados}
+
+Deverá ser entregue:
+
+\begin{enumerate}
+    \item Todo o código, comentado.
+
+    \item Um arquivo README.TXT contendo uma explicação sucinta do código e instruções para compilação e execução do mesmo.
+\end{enumerate}
+
+
+\end{document}
