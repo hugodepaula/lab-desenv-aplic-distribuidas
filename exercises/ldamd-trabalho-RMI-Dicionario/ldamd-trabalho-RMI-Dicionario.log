@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1 Portable) (preloaded format=pdflatex 2024.2.28)  28 FEB 2024 14:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1 Portable) (preloaded format=pdflatex 2024.2.28)  28 FEB 2024 14:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**./ldamd-trabalho-RMI-Dicionário-2024-1.tex
-(ldamd-trabalho-RMI-Dicionário-2024-1.tex
+**./ldamd-trabalho-RMI-Dicionario.tex
+(ldamd-trabalho-RMI-Dicionario.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-13>
 (D:\Program Files\MikTex\texmfs\install\tex/latex/base\article.cls
@@ -845,8 +845,8 @@ File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 LaTeX Warning: Unused global option(s):
     [fullpage].
 
-(ldamd-trabalho-RMI-Dicionário-2024-1.aux)
-\openout1 = `ldamd-trabalho-RMI-Dicionário-2024-1.aux'.
+(ldamd-trabalho-RMI-Dicionario.aux)
+\openout1 = `ldamd-trabalho-RMI-Dicionario.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
 LaTeX Font Info:    ... okay on input line 17.
@@ -925,10 +925,9 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 
 \c@lstlisting=\count345
 Package hyperref Info: Link coloring OFF on input line 17.
-(ldamd-trabalho-RMI-Dicionário-2024-1.out)
-(ldamd-trabalho-RMI-Dicionário-2024-1.out)
+(ldamd-trabalho-RMI-Dicionario.out) (ldamd-trabalho-RMI-Dicionario.out)
 \@outlinefile=\write5
-\openout5 = `ldamd-trabalho-RMI-Dicionário-2024-1.out'.
+\openout5 = `ldamd-trabalho-RMI-Dicionario.out'.
 
 
 (D:\Program Files\MikTex\texmfs\install\tex/latex/listings\lstlang1.sty
@@ -971,23 +970,23 @@ File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 ) [1
 
 {D:/Program Files/MikTex/texmfs/data/fonts/map/pdftex/pdftex.map} <./puc_engeso
-ft_logo.png>] [2] (ldamd-trabalho-RMI-Dicionário-2024-1.aux)
+ft_logo.png>] [2] (ldamd-trabalho-RMI-Dicionario.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-13>
  ***********
-Package rerunfilecheck Info: File `ldamd-trabalho-RMI-Dicionário-2024-1.out' h
-as not changed.
+Package rerunfilecheck Info: File `ldamd-trabalho-RMI-Dicionario.out' has not c
+hanged.
 (rerunfilecheck)             Checksum: F68015236BDCF4950EB234A00DF53C05;414.
  ) 
 Here is how much of TeX's memory you used:
  25660 strings out of 474462
- 458690 string characters out of 5745661
+ 458551 string characters out of 5745661
  1942998 words of memory out of 5000000
  47517 multiletter control sequences out of 15000+600000
  570172 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 89i,13n,90p,549b,590s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,13n,90p,541b,590s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <D:\Program Files\MikTex\texmfs/data\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx
 1200.pk> <D:\Program Files\MikTex\texmfs/data\fonts/pk/ljfour/jknappen/ec/dpi60
 0\ectt1000.pk> <D:\Program Files\MikTex\texmfs/data\fonts/pk/ljfour/jknappen/ec
@@ -999,8 +998,7 @@ ts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <D:\Program Files\MikTex\texmfs/da
 ta\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1200.pk> <D:\Program Files\MikTex\tex
 mfs/data\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1200.pk><D:/Program Files/MikTe
 x/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on ldamd-trabalho-RMI-Dicionário-2024-1.pdf (2 pages, 136312 by
-tes).
+Output written on ldamd-trabalho-RMI-Dicionario.pdf (2 pages, 136312 bytes).
 PDF statistics:
  320 PDF objects out of 1000 (max. 8388607)
  18 named destinations out of 1000 (max. 500000)
