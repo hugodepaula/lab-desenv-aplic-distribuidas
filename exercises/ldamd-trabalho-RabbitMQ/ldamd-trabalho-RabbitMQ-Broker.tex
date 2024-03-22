@@ -92,9 +92,8 @@ As regras de negócio do sistema podem ser descritas da seguinte forma:
 \begin{itemize}
     \item Brokers podem enviar ORDENS DE COMPRA, ORDENS DE VENDA para a bolsa de valores.
     \item Brokers podem assinar tópicos relativos aos ativos que desejam acompanhar.
-    \item Sempre que a bolsa de valores recebe uma ordem de compra ou de venda, ela deve encaminhar essa ordem a todos os brokers os interessados naquela ação específica através de um mecanismo de tópicos.
+    \item Sempre que a bolsa de valores recebe uma ordem de compra ou de venda, ela deve encaminhar essa ordem a todos os brokers interessados naquela ação específica através de uma estrutura de tópicos.
     \item Sempre que o valor de uma ORDEM DE COMPRA for maior ou igual ao valor de uma ORDEM DE VENDA para um mesmo ativo, a bolsa de valores deve gerar uma mensagem do tipo TRANSAÇÃO no tópico adequado, e atualizar/remover as ordens da fila.
-    \item Os brokers deverão encaminhar mensagens para uma
     \item A bolsa de valores e os brokers deverão usar uma estrutura de tópicos, do tipo: operacao.ativo.
 \end{itemize}
 

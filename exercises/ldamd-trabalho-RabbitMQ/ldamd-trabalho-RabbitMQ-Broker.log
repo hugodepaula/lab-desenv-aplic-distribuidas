@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1 Portable) (preloaded format=pdflatex 2024.2.28)  20 MAR 2024 16:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1 Portable) (preloaded format=pdflatex 2024.2.28)  22 MAR 2024 09:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**./ldamd-trabalho-RMI-RabbitMQ.tex
-(ldamd-trabalho-RMI-RabbitMQ.tex
+**./ldamd-trabalho-RabbitMQ-Broker.tex
+(ldamd-trabalho-RabbitMQ-Broker.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-13>
 (D:\Program Files\MikTex\texmfs\install\tex/latex/base\article.cls
@@ -845,8 +845,8 @@ File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 LaTeX Warning: Unused global option(s):
     [fullpage].
 
-(ldamd-trabalho-RMI-RabbitMQ.aux)
-\openout1 = `ldamd-trabalho-RMI-RabbitMQ.aux'.
+(ldamd-trabalho-RabbitMQ-Broker.aux)
+\openout1 = `ldamd-trabalho-RabbitMQ-Broker.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
 LaTeX Font Info:    ... okay on input line 17.
@@ -925,9 +925,9 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 
 \c@lstlisting=\count345
 Package hyperref Info: Link coloring OFF on input line 17.
-(ldamd-trabalho-RMI-RabbitMQ.out) (ldamd-trabalho-RMI-RabbitMQ.out)
+(ldamd-trabalho-RabbitMQ-Broker.out) (ldamd-trabalho-RabbitMQ-Broker.out)
 \@outlinefile=\write5
-\openout5 = `ldamd-trabalho-RMI-RabbitMQ.out'.
+\openout5 = `ldamd-trabalho-RabbitMQ-Broker.out'.
 
 
 (D:\Program Files\MikTex\texmfs\install\tex/latex/listings\lstlang1.sty
@@ -987,27 +987,27 @@ File: bolsadevalores.png Graphic file (type png)
 Package pdftex.def Info: bolsadevalores.png  used on input line 87.
 (pdftex.def)             Requested size: 476.29536pt x 309.88414pt.
 [2 <./bolsadevalores.png>]
-Overfull \hbox (11.26295pt too wide) in paragraph at lines 104--126
+Overfull \hbox (11.26295pt too wide) in paragraph at lines 103--125
 [][] 
  []
 
-[3] [4] (ldamd-trabalho-RMI-RabbitMQ.aux)
+[3] [4] (ldamd-trabalho-RabbitMQ-Broker.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-13>
  ***********
-Package rerunfilecheck Info: File `ldamd-trabalho-RMI-RabbitMQ.out' has not cha
-nged.
+Package rerunfilecheck Info: File `ldamd-trabalho-RabbitMQ-Broker.out' has not 
+changed.
 (rerunfilecheck)             Checksum: 5F7696005CF3FB2D0781232820943DF3;606.
  ) 
 Here is how much of TeX's memory you used:
  25678 strings out of 474462
- 458782 string characters out of 5745661
+ 458842 string characters out of 5745661
  1941998 words of memory out of 5000000
  47528 multiletter control sequences out of 15000+600000
  568555 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 89i,13n,90p,626b,550s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,13n,90p,629b,587s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <D:\Program Files\MikTex\texmfs/data\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
 1200.pk> <D:\Program Files\MikTex\texmfs/data\fonts/pk/ljfour/jknappen/ec/dpi60
 0\tcbx1200.pk> <D:\Program Files\MikTex\texmfs/data\fonts/pk/ljfour/jknappen/ec
@@ -1019,7 +1019,7 @@ ts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <D:\Program Files\MikTex\texmfs/da
 ta\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1200.pk> <D:\Program Files\MikTex\tex
 mfs/data\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1200.pk><D:/Program Files/MikTe
 x/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on ldamd-trabalho-RMI-RabbitMQ.pdf (4 pages, 186788 bytes).
+Output written on ldamd-trabalho-RabbitMQ-Broker.pdf (4 pages, 186753 bytes).
 PDF statistics:
  389 PDF objects out of 1000 (max. 8388607)
  26 named destinations out of 1000 (max. 500000)
