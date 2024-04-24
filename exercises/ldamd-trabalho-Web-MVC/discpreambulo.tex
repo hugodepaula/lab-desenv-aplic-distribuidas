@@ -1,0 +1,117 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Preambulo - Pacotes
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[table]{xcolor}
+\usepackage{geometry}
+\usepackage[portuges]{babel}
+\usepackage[portuges]{translator}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{epsfig}
+\usepackage{multirow}
+\usepackage{tikz}
+\usepackage{listings}
+\usepackage{natbib}
+\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Preambulo - Configuração de Página
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\topmargin}{0pt}
+\setlength{\voffset}{-1.8cm}
+\setlength{\textheight}{25,6cm}
+\setlength{\oddsidemargin}{0cm}
+\setlength{\evensidemargin}{0cm}
+\setlength{\hoffset}{-1cm}
+\setlength{\textwidth}{18cm}
+
+\pagestyle{empty}
+
+\input xy
+\xyoption{all}
+\xyoption{color}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Define cabeçalho de prova
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\cabecalhoProva}{
+\pagestyle{fancy} % define página com cabeçalho
+\fancyhf{} % limpa todos os cabeçalhos e rodapés
+\setlength{\headheight}{22pt} %% define tamanho personalizado de cabeçalho
+\renewcommand{\headrulewidth}{0pt} % elimina a linha de separação do cabeçalho
+\fancyhead[LO]{\dadosAluno}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Logo da PUC Minas
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\logoPUC}[2]{
+\begin{center}\renewcommand{\tabcolsep}{3mm}
+    \begin{tabular*}{\textwidth}{ll}
+        \multirow{4}{*}{\includegraphics[height=1.4cm]{#2}}
+        &   \\
+        & \usefont{T1}{cmss}{bx}{n} PONTIFÍCIA  UNIVERSIDADE  CATÓLICA  DE  MINAS  GERAIS  \\
+        &  \usefont{T1}{cmss}{bx}{n} #1\vspace{2mm}\\
+        &   \\
+    \end{tabular*}
+\end{center}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Caracteristicas da disciplina
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\dadosDisciplina}[5]{
+\begin{center}
+\begin{tabular*}{\textwidth}{|p{7.5cm}@{\extracolsep{\fill}}|p{5.5cm}|p{2cm}|p{1.2cm}|}
+    \hline
+    \sf Disciplina & \sf Departamento & \sf Turno & \sf Período \\
+    
+    \multicolumn{1}{|c|}{#1} &
+    \multicolumn{1}{c|}{#2} &
+    \multicolumn{1}{c|}{#3} &
+    \multicolumn{1}{r|}{#4$^\circ$} \\ \hline \hline
+    \multicolumn{4}{|l|}{\sf Professor} \\
+    \multicolumn{4}{|l|}{\hspace{1cm} #5} \\ \hline
+\end{tabular*}
+\end{center}
+}
+
+
+\newcommand{\dadosAluno}{
+\begin{tabular*}{\textwidth}{|p{.2\textwidth}@{\extracolsep{\fill}}|p{.75\textwidth}|}
+	\hline
+	\sf Matrícula: & \sf Aluno: \\
+	\hspace{1cm} & \hspace{1cm} \\
+	\hline
+\end{tabular*}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Título simples
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\tituloPUC}[1]{
+\vspace{3mm}
+
+\begin{center}
+    {\Large \bf #1}
+\end{center}
+
+\vspace{3mm}
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Comandos para gabarito
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\itemvf}[1]{\item ( \ifgabarito  #1 \else\hspace{8mm}\fi )}
+\newcommand{\itemresp}[1]{\ifgabarito \textbf{\item #1} \else \item #1 \fi}
+
