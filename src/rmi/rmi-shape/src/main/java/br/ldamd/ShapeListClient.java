@@ -1,3 +1,5 @@
+package br.ldamd;
+
 import java.rmi.*;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
@@ -19,12 +21,12 @@ public class ShapeListClient {
 		if (args.length > 2)
 			preenchido = args[2]; // especifica preenchimento.
 
-		System.out.println("opção = " + opcao + " forma = " + forma + " preenchido = " + preenchido);
+		System.out.println("opï¿½ï¿½o = " + opcao + " forma = " + forma + " preenchido = " + preenchido);
 
 //		if (System.getSecurityManager() == null) {
 //			System.setSecurityManager(new SecurityManager());
 //		} else
-//			System.out.println("Já possui um Security Manager.");
+//			System.out.println("Jï¿½ possui um Security Manager.");
 
 		ShapeList aShapeList = null;
 
@@ -33,13 +35,13 @@ public class ShapeListClient {
 			aShapeList = (ShapeList) registry.lookup("ShapeList");
 			System.out.println("ShapeList Encontrado.");
 
-			Vector<Shape> sList = aShapeList.allShapes(); // Invocação de método remoto
+			Vector<Shape> sList = aShapeList.allShapes(); // Invocaï¿½ï¿½o de mï¿½todo remoto
 			System.out.println("Retornado o vetor de ShapeList");
 
 			if (opcao.equals("ler")) {
 				sList.stream().forEach((s) -> {
 					try {
-						s.getAllState().print(); // Invocação de método remoto
+						s.getAllState().print(); // Invocaï¿½ï¿½o de mï¿½todo remoto
 					} catch (RemoteException e) {
 					}
 				});
@@ -47,13 +49,13 @@ public class ShapeListClient {
 				GraphicalObject g = new GraphicalObject(forma, 
 						new Rectangle((int) (Math.random()*100), (int) (Math.random()*100), 300, 400), 
 						Color.CYAN, Color.MAGENTA, (preenchido.equals("sim") ? true : false));
-				System.out.println("Objeto Gráfico criado");
+				System.out.println("Objeto Grï¿½fico criado");
 
-				aShapeList.newShape(g); // Invocação de método remoto
+				aShapeList.newShape(g); // Invocaï¿½ï¿½o de mï¿½todo remoto
 				System.out.println("Armazena forma: " + forma);
 			}
 		} catch (RemoteException e) {
-			System.out.println("Método allShapes: " + e.getMessage());
+			System.out.println("Mï¿½todo allShapes: " + e.getMessage());
 		} catch (Exception e) {
 			System.out.println("Lookup: " + e.getMessage());
 		}

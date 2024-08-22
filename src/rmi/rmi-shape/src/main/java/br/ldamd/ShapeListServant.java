@@ -1,3 +1,5 @@
+package br.ldamd;
+
 import java.rmi.RemoteException;
 import java.util.Vector;
 

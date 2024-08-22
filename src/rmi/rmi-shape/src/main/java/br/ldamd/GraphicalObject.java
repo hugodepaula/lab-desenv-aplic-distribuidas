@@ -1,3 +1,5 @@
+package br.ldamd;
+
 import java.awt.Rectangle;
 import java.awt.Color;
 import java.awt.Graphics;

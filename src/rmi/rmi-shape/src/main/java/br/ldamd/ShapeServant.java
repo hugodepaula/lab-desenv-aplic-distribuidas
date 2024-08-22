@@ -1,3 +1,5 @@
+package br.ldamd;
+
 
 import java.rmi.*;
 import java.rmi.server.UnicastRemoteObject;

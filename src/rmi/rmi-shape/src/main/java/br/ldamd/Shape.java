@@ -1,3 +1,5 @@
+package br.ldamd;
+
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 
