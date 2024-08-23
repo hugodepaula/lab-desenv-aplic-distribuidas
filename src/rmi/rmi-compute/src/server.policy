@@ -1,0 +1,3 @@
+grant codeBase "file:/home/pucminas/Dev/COMP/" {
+    permission java.security.AllPermission;
+};
