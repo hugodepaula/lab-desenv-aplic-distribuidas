@@ -1,9 +1,9 @@
-package client;
+package br.ldamd.client;
 
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
-import engine.Compute;
+import br.ldamd.engine.Compute;
 
 import java.math.BigDecimal;
 

@@ -1,10 +1,10 @@
-package client;
+package br.ldamd.client;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-import engine.Task;
+import br.ldamd.engine.Task;
 
 public class Pi implements Task<BigDecimal>, Serializable {
 

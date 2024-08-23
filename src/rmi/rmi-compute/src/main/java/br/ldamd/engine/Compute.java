@@ -1,4 +1,4 @@
-package engine;
+package br.ldamd.engine;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
