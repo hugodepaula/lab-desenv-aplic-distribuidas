@@ -1,12 +1,12 @@
-package br.ldamd;
+package br.ldamd.remote;
 
 import java.awt.Rectangle;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.io.Serializable;
 
-@SuppressWarnings("serial")
 public class GraphicalObject implements Serializable {
+	private static final long serialVersionUID = 280214445536057525L;
 	public String type; // linha, circulo, quadrado, retangulo
 	public Rectangle enclosing; // x, y, width, height
 	public Color line;

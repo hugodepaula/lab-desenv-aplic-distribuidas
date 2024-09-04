@@ -1,9 +1,14 @@
-package br.ldamd;
+package br.ldamd.client;
 
 import java.rmi.*;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.util.Vector;
+
+import br.ldamd.remote.GraphicalObject;
+import br.ldamd.remote.Shape;
+import br.ldamd.remote.ShapeList;
+
 import java.awt.Rectangle;
 import java.awt.Color;
 
@@ -21,17 +26,12 @@ public class ShapeListClient {
 		if (args.length > 2)
 			preenchido = args[2]; // especifica preenchimento.
 
-		System.out.println("op��o = " + opcao + " forma = " + forma + " preenchido = " + preenchido);
-
-//		if (System.getSecurityManager() == null) {
-//			System.setSecurityManager(new SecurityManager());
-//		} else
-//			System.out.println("J� possui um Security Manager.");
+		System.out.println("opção = " + opcao + " forma = " + forma + " preenchido = " + preenchido);
 
 		ShapeList aShapeList = null;
 
 		try {
-			Registry registry = LocateRegistry.getRegistry("localhost");
+            Registry registry = LocateRegistry.getRegistry("localhost",10099);
 			aShapeList = (ShapeList) registry.lookup("ShapeList");
 			System.out.println("ShapeList Encontrado.");
 

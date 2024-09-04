@@ -1,4 +1,4 @@
-package br.ldamd;
+package br.ldamd.remote;
 
 import java.rmi.*;
 import java.util.Vector;
