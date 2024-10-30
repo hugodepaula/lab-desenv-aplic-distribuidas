@@ -1,0 +1,8 @@
+grant { 
+    permission java.security.AllPermission; 
+    permission java.security.SecurityPermission "Security.insertProvider.*";
+    permission java.security.SecurityPermission "Security.removeProvider.*";
+    permission java.security.SecurityPermission "Security.setProperty.*";
+    permission java.net.SocketPermission "localhost:1024-", "accept,resolve";
+};
+      
