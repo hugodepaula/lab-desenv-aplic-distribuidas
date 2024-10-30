@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "789248824124",
+    "firebase_url": "https://pucminas-ldamd.firebaseio.com",
+    "project_id": "pucminas-ldamd",
+    "storage_bucket": "pucminas-ldamd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:789248824124:android:ac29a129553f0a1e2f4439",
+        "android_client_info": {
+          "package_name": "br.pucminas.ldamd.fireflutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "789248824124-jd1j6akq1vemunho879ah9o6l2mk9fck.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA77aX1DfVxQR8HiehZwsxUGPDfaLbuFaU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "789248824124-jd1j6akq1vemunho879ah9o6l2mk9fck.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
