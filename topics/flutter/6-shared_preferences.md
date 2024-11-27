@@ -1,3 +1,33 @@
+# Usando o `Shared Preferences` no Flutter
+
+Vamos criar um exemplo de uma tela de login no Flutter onde o nome do usuário pode ser salvo utilizando o pacote `shared_preferences`. A ideia é que o nome digitado pelo usuário seja armazenado de forma persistente e carregado automaticamente quando o usuário voltar à tela de login.
+
+## Passo 1: Criar o Projeto Flutter
+
+
+## Passo 2: Adicionar a Dependência `shared_preferences`
+
+1. No arquivo `pubspec.yaml`, adicione o pacote `shared_preferences`:
+
+```dart
+dependencies:
+  flutter:
+    sdk: flutter
+  shared_preferences: ^2.3.3
+```
+
+2. Execute o comando para instalar as dependências:
+
+```dart
+flutter pub get
+```
+
+
+## Passo 3: Criar Aplicação
+
+1. No arquivo `lib/main.dart`, substitua o código pelo seguinte:
+
+```dart
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -6,8 +36,6 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -17,14 +45,12 @@ class MyApp extends StatelessWidget {
 }
 
 class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
-
   @override
   _LoginScreenState createState() => _LoginScreenState();
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  final TextEditingController _nameController = TextEditingController();
+  TextEditingController _nameController = TextEditingController();
   String _savedName = '';
 
   @override
@@ -97,3 +123,4 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 }
+```

@@ -2,14 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 
 class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
   late Position _currentPosition = Position(
-    longitude: -19.9323087,
-    latitude: -43.93613433,
+    longitude: -19.8551828, 
+    latitude: -43.9567326,
     timestamp: DateTime.now(),
     accuracy: 0.0,
     altitude: 0.0,
