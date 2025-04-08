@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package helloworld;
+
+// Opções para geração de código (opcional)
+option java_package = "com.example.helloworld";
+option java_multiple_files = true;
+option go_package = "github.com/example/helloworld";
+
+// Definição do serviço
+service Greeter {
+  // Chamada RPC simples
+  rpc SayHello (HelloRequest) returns (HelloReply) {}
+  
+  // Chamada com streaming de resposta
+  rpc LotsOfReplies (HelloRequest) returns (stream HelloReply) {}
+  
+  // Chamada com streaming de requisição
+  rpc LotsOfGreetings (stream HelloRequest) returns (HelloReply) {}
+  
+  // Chamada com streaming bidirecional
+  rpc BidiHello (stream HelloRequest) returns (stream HelloReply) {}
+}
+
+// Mensagem de requisição
+message HelloRequest {
+  string name = 1;
+  optional int32 age = 2;  // Campo opcional (novo em proto3)
+}
+
+// Mensagem de resposta
+message HelloReply {
+  string message = 1;
+  repeated string tags = 2;  // Campo repetido (lista)
+}

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package phonebook;
+
+service PhonebookService {
+  rpc LookupNumber (LookupRequest) returns (LookupResponse);
+}
+
+message LookupRequest {
+  string name = 1;
+}
+
+message LookupResponse {
+  string name = 1;
+  string phone_number = 2;
+  bool found = 3;
+}
