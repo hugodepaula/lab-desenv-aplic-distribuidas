@@ -37,7 +37,7 @@ def publicar_mensagem(channel, routing_key, mensagem):
 def simular_bolsa():
     """Simula um producer enviando dados da bolsa de valores."""
     # URL de conexão do CloudAMQP - substitua pela sua URL
-    amqp_url = 'amqp://usuario:senha@servidor.cloudamqp.com/vhost'
+    amqp_url = 'amqps://obbqyktj:MPxB5AqLBE3OiQfPQ5rHUj8cfeVsVsQx@shark.rmq.cloudamqp.com/obbqyktj'
     
     # Conectar ao RabbitMQ
     connection, channel = conectar_rabbitmq(amqp_url)

@@ -80,7 +80,7 @@ def processar_mensagem(ch, method, properties, body):
 def iniciar_consumer(tipo_consumer):
     """Inicia o consumer com as configurações apropriadas."""
     # URL de conexão do CloudAMQP - substitua pela sua URL
-    amqp_url = 'amqp://usuario:senha@servidor.cloudamqp.com/vhost'
+    amqp_url = 'amqps://obbqyktj:MPxB5AqLBE3OiQfPQ5rHUj8cfeVsVsQx@shark.rmq.cloudamqp.com/obbqyktj'
     
     if tipo_consumer == 'cotacoes':
         queue_name = 'cotacoes'
