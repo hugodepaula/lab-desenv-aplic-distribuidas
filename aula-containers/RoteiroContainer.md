@@ -45,7 +45,7 @@ add dependecy SpringWeb
 unzip app-docker.zip
 cd app-docker
 ```
-![Projeto Spring](/versao-demo.png)
+![Projeto Spring](./versao-demo.png)
 
 
 Edite o ```src/main/java/com/example/demo/DemoApplication.java:```
@@ -172,7 +172,7 @@ add dependecy Spring Web, Lombok, Spring Data JPA e Postgre Sql Drive
 unzip app-docker.zip
 cd app-docker
 ```
-![Projeto Spring](/docker-compose.png)
+![Projeto Spring](./docker-compose.png)
 
 #### 1. Entidade JPA
 
