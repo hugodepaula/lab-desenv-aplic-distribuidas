@@ -1,0 +1,3 @@
+[submodule "aula-offiline-first/offline_first"]
+	path = aula-offiline-first/offline_first
+	url = https://github.com/islamoktay/offline_first.git
