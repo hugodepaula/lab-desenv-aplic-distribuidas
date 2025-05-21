@@ -35,22 +35,6 @@ Desenvolver uma aplicação Flutter com persistência local (offline-first) util
 
 ---
 
-## 📁 Estrutura do Projeto Flutter
-
-```
-lib/
-├── main.dart
-├── models/
-│   └── todo.dart
-├── repositories/
-│   └── todo_repository.dart
-├── services/
-│   └── api_service.dart
-└── screens/
-    └── home_screen.dart
-```
-
-
 ## 🖥️ Backend: API Spring Boot
 
 # Construção da API REST com Spring Boot
@@ -66,8 +50,6 @@ Dependências:
 Spring Web → cria endpoints REST.
 
 DevTools → recarregamento automático durante o desenvolvimento.
-
-Jackson → para lidar com JSON.
 
 Lombok → para reduzir boilerplate (como getters/setters).
 
@@ -87,6 +69,12 @@ Colocar o arquivo em `src/main/resources/`.
 ### Modelo de Dados com Lombok
 
 ```java
+package com.example.demo;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -95,6 +83,7 @@ public class Todo {
     private String title;
     private boolean completed;
 }
+
 
 ```
 
@@ -105,14 +94,30 @@ public class Todo {
 ### 2. Controlador que lê do JSON
 
 ```java
+package com.example.demo;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 @RestController
 @RequestMapping("/api/todos")
+@CrossOrigin(origins = "*")
 public class TodoController {
     private final List<Todo> todos;
 
     public TodoController() throws IOException {
         ObjectMapper mapper = new ObjectMapper();
-        InputStream is = new ClassPathResource("data.json").getInputStream();
+        InputStream is = new ClassPathResource("todos.json").getInputStream();
         todos = Arrays.asList(mapper.readValue(is, Todo[].class));
     }
 
@@ -138,6 +143,7 @@ public class TodoController {
 
 ## 📱 Frontend: Flutter
 
+
 ### Criar projeto
 
 ```bash
@@ -152,9 +158,11 @@ cd offline_first_demo
 dependencies:
   flutter:
     sdk: flutter
-  http: ^0.14.0           # Requisições HTTP
+  http: ^1.4.0            # Requisições HTTP
   hive: ^2.2.3            # Banco local NoSQL
   hive_flutter: ^1.1.0    # Integração com Flutter
+  hive_generator: ^2.0.0
+  build_runner: ^2.3.3
   path_provider: ^2.0.12  # Acesso a diretórios do sistema
   connectivity_plus: ^5.0.2 # Verificação de conexão
 ```
@@ -162,6 +170,10 @@ dependencies:
 ### Modelo de dados `Todo`
 
 ```dart
+import 'package:hive/hive.dart';
+
+part 'Todo.g.dart'; // necessário para gerar o adapter automaticamente
+
 @HiveType(typeId: 0)
 class Todo extends HiveObject {
   @HiveField(0)
@@ -176,31 +188,43 @@ class Todo extends HiveObject {
   Todo({required this.id, required this.title, required this.completed});
 
   factory Todo.fromJson(Map<String, dynamic> json) => Todo(
-        id: json['id'],
-        title: json['title'],
-        completed: json['completed'],
-      );
+    id: json['id'],
+    title: json['title'],
+    completed: json['completed'],
+  );
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'title': title,
-        'completed': completed,
-      };
+    'id': id,
+    'title': title,
+    'completed': completed,
+  };
 }
 ```
 
 > **Explicação**: Essa classe representa o modelo de dado `Todo`. Utilizamos `HiveType` e `HiveField` para permitir o armazenamento local no Hive (necessário para Hive serializar os objetos). `HiveObject` permite salvar e manipular dados no Hive. O método `fromJson` transforma um mapa em objeto, e `toJson` faz o contrário.
 
 
-#### Execute
+Por padrão, o `Hive` só consegue salvar tipos primitivos como:
+
+`int, double, String, bool, List, Map`.
+
+Se você quiser armazenar uma classe personalizada (como um `Todo`, por exemplo), você precisa registrar um `TypeAdapter` para que o Hive saiba como converter o objeto em dados binários e vice-versa.
+
+#### Gere o adaptador com o comando na raiz do projeto:
 
 `flutter packages pub run build_runner build`
 
-
+Esse comando vai gerar o arquivo `todo.g.dart`, contendo o `TodoAdapter`.
 
 ### Repositório `TodoRepository`
 
 ```dart
+import 'dart:convert';
+
+import 'package:hive/hive.dart';
+import 'package:offline_first/Todo.dart';
+import 'package:http/http.dart' as http;
+
 class TodoRepository {
   final String apiUrl = 'http://localhost:8080/api/todos';
 
@@ -256,7 +280,9 @@ void main() async {
   await Hive.initFlutter();
   Hive.registerAdapter(TodoAdapter());
   await Hive.openBox<Todo>('todos');
-  runApp(MyApp());
+  runApp( MaterialApp(
+   home: HomeScreen(),
+  ));
 }
 ```
 
@@ -265,6 +291,12 @@ void main() async {
 ### Tela principal `HomeScreen`
 
 ```dart
+import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:offline_first/Todo.dart';
+import 'package:offline_first/TodoRepository.dart';
+
 class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
