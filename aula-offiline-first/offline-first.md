@@ -1,12 +1,12 @@
-# 🧪 Roteiro de Aula Prática: Aplicações Offline-First com Flutter e Spring Boot
+# Roteiro de Aula Prática: Aplicações Offline-First com Flutter e Spring Boot
 
-## 🎯 Objetivo
+## Objetivo
 
 Desenvolver uma aplicação Flutter com persistência local (offline-first) utilizando o padrão Repository e o banco de dados local Hive, integrada a uma API REST desenvolvida em Spring Boot que lê dados de um arquivo `.json`.
 
 ---
 
-## 🧠 Conceitos Envolvidos
+## Conceitos Envolvidos
 
 * **Arquitetura offline-first**: padrão de design em que os dados são acessados preferencialmente do armazenamento local. A sincronização com o servidor é feita somente quando a conexão estiver disponível.
 * **Padrão Repository**: separa a lógica de acesso aos dados da lógica de apresentação, facilitando testes e manutenção.
@@ -20,7 +20,7 @@ Desenvolver uma aplicação Flutter com persistência local (offline-first) util
 
 ---
 
-## 💻 Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 | Tecnologia        | Função                                                                    |
 | ----------------- | ------------------------------------------------------------------------- |
@@ -32,12 +32,11 @@ Desenvolver uma aplicação Flutter com persistência local (offline-first) util
 | Lombok            | Biblioteca para reduzir boilerplate no Java (getters/setters automáticos) |
 | HTTP (Dart)       | Biblioteca para realizar requisições REST no Flutter                      |
 
-
 ---
 
-## 🖥️ Backend: API Spring Boot
+## Backend: API Spring Boot
 
-# Construção da API REST com Spring Boot
+## Construção da API REST com Spring Boot
 
 ### Criação do Projeto
 
@@ -53,7 +52,7 @@ DevTools → recarregamento automático durante o desenvolvimento.
 
 Lombok → para reduzir boilerplate (como getters/setters).
 
-## 📂 Arquivo JSON para a API
+## Arquivo JSON para a API
 
 `todos.json`:
 
@@ -129,7 +128,6 @@ public class TodoController {
 
 ```
 
-
 `@RestController`: Define um controlador REST.
 
 `@RequestMapping`: Define o caminho base da API.
@@ -138,11 +136,9 @@ public class TodoController {
 
 `ClassPathResource`: Carrega o arquivo do classpath.
 
-
 ---
 
-## 📱 Frontend: Flutter
-
+## Frontend: Flutter
 
 ### Criar projeto
 
@@ -150,7 +146,6 @@ public class TodoController {
 flutter create offline_first_demo
 cd offline_first_demo
 ```
-
 
 ### Adicionar dependências ao `pubspec.yaml`
 
@@ -203,7 +198,6 @@ class Todo extends HiveObject {
 
 > **Explicação**: Essa classe representa o modelo de dado `Todo`. Utilizamos `HiveType` e `HiveField` para permitir o armazenamento local no Hive (necessário para Hive serializar os objetos). `HiveObject` permite salvar e manipular dados no Hive. O método `fromJson` transforma um mapa em objeto, e `toJson` faz o contrário.
 
-
 Por padrão, o `Hive` só consegue salvar tipos primitivos como:
 
 `int, double, String, bool, List, Map`.
@@ -255,8 +249,7 @@ class TodoRepository {
 
 > **Explicação**: Esse repositório separa a lógica de acesso aos dados. Ele verifica se está online e salva os dados localmente após baixar. Se estiver offline, usa os dados já armazenados.
 
-
-## 💡 O que é `Future`
+## O que é `Future`
 
 `Future` é uma representação de um valor que estará disponível no futuro, geralmente resultado de uma operação assíncrona, como uma requisição HTTP ou leitura de arquivo.
 
@@ -270,7 +263,6 @@ Future<String> saudacao() async {
 > **Explicação**: O `await` pausa a execução da função até que o valor esteja pronto, sem travar a aplicação.
 
 ---
-
 
 ### Configuração do Hive no `main.dart`
 
@@ -348,10 +340,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
 ---
 
+## Como a Aplicação Funciona Offline
 
-## ⚙️ Como a Aplicação Funciona Offline
-
-### 🔁 Fluxo completo:
+### Fluxo completo:
 
 1. O app inicia e executa `loadTodos()`.
 2. O pacote `connectivity_plus` verifica se há conexão com a internet.
@@ -366,11 +357,3 @@ class _HomeScreenState extends State<HomeScreen> {
 
 * Execute o app com o backend ligado e conexão ativa ➝ os dados vêm da API.
 * Desligue a internet ou o backend ➝ os dados vêm do armazenamento local Hive.
-
----
-
-## 📚 Conclusão
-
-Esse roteiro mostra como construir uma aplicação Flutter que continue funcional mesmo sem conexão com a internet. O uso da arquitetura offline-first é essencial para experiências robustas em ambientes com conectividade instável. Ao integrar Hive, Repository e conectividade, os alunos entendem como separar as responsabilidades e garantir resiliência no frontend móvel.
-
-Deseja adicionar exercícios ou uma atividade avaliativa ao final da aula?
