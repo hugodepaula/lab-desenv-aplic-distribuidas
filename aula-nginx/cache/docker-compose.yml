@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  nginx-cache:
+    build: .
+    ports:
+      - "80:80"
+    volumes:
+      - ./cache:/var/cache/nginx
+      - ./static:/usr/share/nginx/static
+    restart: unless-stopped

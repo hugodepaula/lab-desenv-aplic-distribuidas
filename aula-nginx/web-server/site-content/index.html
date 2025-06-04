@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nginx Server Test</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+      background-color: #f4f4f4;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      color: #0066cc;
+      text-align: center;
+    }
+    .success-message {
+      background-color: #d4edda;
+      color: #155724;
+      padding: 10px;
+      border-radius: 5px;
+      margin: 20px 0;
+      text-align: center;
+    }
+    .server-info {
+      background-color: #e9ecef;
+      padding: 15px;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Bem-vindo ao Servidor Nginx!</h1>
+    
+    <div class="success-message">
+      <p>✅ Se você está vendo esta página, o servidor Nginx está funcionando corretamente!</p>
+    </div>
+    
+    <p>Esta é uma página HTML estática simples que está sendo servida pelo Nginx rodando em um contêiner Docker.</p>
+    
+    <div class="server-info">
+      <h2>Informações do Servidor:</h2>
+      <ul>
+        <li><strong>Servidor:</strong> Nginx</li>
+        <li><strong>Porta:</strong> 8080 (mapeada para a porta 80 do contêiner)</li>
+        <li><strong>Volume:</strong> ./site-content mapeado para /usr/share/nginx/html</li>
+      </ul>
+    </div>
+    
+    <p>Este arquivo está localizado em: <code>/usr/share/nginx/html/index.html</code> dentro do contêiner Docker.</p>
+    
+    <footer>
+      <hr>
+      <p style="text-align: center;">Laboratório de Desenvolvimento de Aplicações Distribuídas - PUC Minas</p>
+    </footer>
+  </div>
+</body>
+</html>
