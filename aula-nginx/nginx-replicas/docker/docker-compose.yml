@@ -1,0 +1,22 @@
+services:
+  backend:
+    build: ../backend
+    environment:
+      - PORT=5050 
+    deploy:
+      replicas: 4
+    networks:
+      - loadbalancing
+
+  nginx-replicas:
+    build: ../nginx
+    container_name: nginx-replicas
+    ports:
+      - "80:80"
+    networks:
+      - loadbalancing
+    depends_on:
+      - backend
+
+networks:
+  loadbalancing:

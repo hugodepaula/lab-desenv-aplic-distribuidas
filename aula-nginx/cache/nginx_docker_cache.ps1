@@ -10,6 +10,8 @@ docker-compose up --build -d
 # docker-compose restart
 
 # docker exec nginx-app nginx -t
+# nc -lp 1234
+
 
 # docker exec nginx-app nginx -s reload
 
@@ -21,7 +23,7 @@ docker-compose up --build -d
 # Executa um novo contêiner Nginx com a seguinte configuração:
 
 # docker build -t nginx-cache .
-# docker run -d -p 80:80 \
+# docker run --net learn-networking -d -p 80:80 \
 #        -v ${PWD}/cache:/var/cache/nginx \
 #        -v ${PWD}/static:/usr/share/nginx/static --name nginx-cache-container nginx-cache
 

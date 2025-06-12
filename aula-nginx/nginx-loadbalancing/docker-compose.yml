@@ -1,0 +1,35 @@
+services:
+  app1:
+    build: ./app1
+    ports:
+    - "5001:5000"
+    networks:
+      - loadbalancing
+
+  app2:
+    build: ./app2
+    ports:
+    - "5002:5000"
+    networks:
+      - loadbalancing
+
+  app3:
+    build: ./app3
+    ports:
+    - "5003:5000"
+    networks:
+      - loadbalancing
+
+  nginx:
+    build: ./nginx 
+    ports:
+    - "8080:80"
+    networks:
+      - loadbalancing
+    depends_on:
+      - app1
+      - app2
+      - app3
+
+networks:
+  loadbalancing:
